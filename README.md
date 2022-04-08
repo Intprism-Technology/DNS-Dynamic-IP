@@ -15,6 +15,11 @@ It is possible to check the Public IP on the router, if the ISP provides a Priva
 * Windows
 * Linux
 
+## Supported Browser Driver
+    Firefox => 'firefox'
+    Chrome => 'chrome'
+    Edge => 'msedge'
+
 ## Usage
 ### Requirements
 * Python 3

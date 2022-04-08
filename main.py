@@ -92,7 +92,7 @@ if(config.routerType == 'G-240W-L'):
         else:
             print('IP : '+public_ip.text)
             print('Change DNS...')
-            ChangeDNS('27.112.78.203')
+            ChangeDNS(public_ip.text)
             driver.close()
             print('Success...')
 else:

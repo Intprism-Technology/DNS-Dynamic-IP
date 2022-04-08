@@ -13,17 +13,18 @@ It is possible to check the Public IP on the router, if the ISP provides a Priva
 
 ## Supported Operating System
 * Windows
-* Linux with Desktop Environment
+* Linux
 
 ## Usage
 ### Requirements
 * Python 3
 * Browser Installed (Firefox, Chrome, Edge)
 ### Installation
-* Clone this repository
+* Make python virtual environment
+* Clone this repository inside venv
 * Run using Cron (Linux)
     ```
-    */5 * * * * /usr/bin/python3 /root_installation/start.py
+    */5 * * * * /venv_loation/bin/python /venv_loation/start.py
     ```
 * Run using Task Scheduler
     ```
@@ -61,7 +62,7 @@ It is possible to check the Public IP on the router, if the ISP provides a Priva
     ```
 * Is it possible to use linux server CLI?
     ```
-    No, you need a browser installed, so you need a desktop environment
+    Yes you can, first install browser using command line, and run the service
     ```
 * I want to contribute and add support router or DNS provider
     ```

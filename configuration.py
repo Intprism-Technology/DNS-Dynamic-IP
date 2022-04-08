@@ -1,0 +1,13 @@
+routerType              = ''
+routerIP                = ''
+username                = ''
+password                = ''
+browserDriver           = ''
+headlessMode            = True
+dnsDriver               = ''
+# Cloudflare API
+cf_email                = ''
+cf_token                = ''
+cf_exceptListDnsUpdate  = []
+cf_ipType               = ''
+cf_onlyDomain           = []

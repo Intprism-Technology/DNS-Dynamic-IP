@@ -1,0 +1,8 @@
+Lib
+Scripts
+share
+pyvenv.cfg
+__pycache__
+DnsDriver/__pycache__
+*.log
+configuration_dev.py

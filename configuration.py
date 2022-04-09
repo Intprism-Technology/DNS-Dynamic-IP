@@ -11,3 +11,4 @@ cf_token                = ''
 cf_exceptListDnsUpdate  = []
 cf_ipType               = ''
 cf_onlyDomain           = []
+cf_onlyDnsRecord        = []

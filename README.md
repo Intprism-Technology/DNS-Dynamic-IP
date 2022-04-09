@@ -39,7 +39,7 @@ It is possible to check the Public IP on the router, if the ISP provides a Priva
     4. Follow through the wizard.
     ```
 ### Configuration
-* Edit di configuration.py
+* Edit at configuration.py, example you can see inside folder examples/configuration.py
     ```
     routerType              = ''    # required from lists
     routerIP                = ''    # required
@@ -54,6 +54,7 @@ It is possible to check the Public IP on the router, if the ISP provides a Priva
     cf_exceptListDnsUpdate  = []    # optional
     cf_ipType               = ''    # required (A or AAAA)
     cf_onlyDomain           = []    # optional
+    cf_onlyDnsRecord        = []    # optional
     ```
 
 ## FAQ

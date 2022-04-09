@@ -21,7 +21,6 @@ def do_dns_update(zone_name, zone_id, ip_address, ip_address_type):
     # update the record - unless it's already correct
     for dns_record in dns_records:
         if(dns_record['name'] not in configuration.cf_exceptListDnsUpdate):
-            print(dns_record['name'])
             old_ip_address = dns_record['content']
             old_ip_address_type = dns_record['type']
 
@@ -38,6 +37,10 @@ def do_dns_update(zone_name, zone_id, ip_address, ip_address_type):
             if ip_address == old_ip_address:
                 print('UNCHANGED: %s %s' % (dns_record['name'], ip_address))
                 updated = True
+                continue
+            
+            if(len(configuration.cf_onlyDnsRecord) > 0 and dns_record['name'] not in configuration.cf_onlyDnsRecord):
+                print('[ '+dns_record['name']+' ] not in list cf_onlyDnsRecord, skiped...')
                 continue
 
             proxied_state = dns_record['proxied']
@@ -69,5 +72,5 @@ def dns_update(ip_address):
         # print("zone_id=%s zone_name=%s" % (zone_id, zone_name))
         if(len(configuration.cf_onlyDomain) > 0 and zone_name in configuration.cf_onlyDomain):
             do_dns_update(zone_name, zone_id, ip_address, configuration.cf_ipType)
-        elif(len(configuration.cf_onlyDomain) == 0):
+        if(len(configuration.cf_onlyDomain) == 0):
             do_dns_update(zone_name, zone_id, ip_address, configuration.cf_ipType)

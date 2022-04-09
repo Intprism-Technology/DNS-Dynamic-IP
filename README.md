@@ -26,12 +26,22 @@ It is possible to check the Public IP on the router, if the ISP provides a Priva
 * Browser Installed (Firefox, Chrome, Edge)
 ### Installation
 * Make python virtual environment
+    ```
+    python3 -m venv <venv_location>
+    cd <venv_location>
+    ```
 * Clone this repository inside venv
+    ```
+    git init
+    git remote add origin https://github.com/Intprism-Technology/DNS-Dynamic-IP.git
+    git branch --set-upstream-to=origin/main master
+    git pull
+    ```
 * Run using Cron (Linux)
     ```
-    */5 * * * * /venv_loation/bin/python /venv_loation/start.py
+    */5 * * * * /venv_location/bin/python /venv_location/start.py
     ```
-* Run using Task Scheduler
+* Run using Task Scheduler (Windows)
     ```
     1. Make sure you logged on as an administrator or you have the same access as an administrator.
     2. Start->Control Panel->System and Security->Administrative Tools->Task Scheduler

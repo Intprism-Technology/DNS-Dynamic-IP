@@ -1,7 +1,4 @@
-import importorinstall
 import configuration
-
-importorinstall.package('CloudFlare')
 
 import CloudFlare
 

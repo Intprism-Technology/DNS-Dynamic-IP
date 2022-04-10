@@ -1,11 +1,8 @@
 import time
 import re
-import importorinstall
 import configuration
 from DnsDriver import cloudflare
 
-importorinstall.package('selenium')
-importorinstall.package('webdriver_manager')
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys

@@ -39,7 +39,7 @@ It is possible to check the Public IP on the router, if the ISP provides a Priva
     ```
 * Run using Cron (Linux)
     ```
-    */5 * * * * /venv_location/bin/python /venv_location/start.py
+    */5 * * * * /venv_location/bin/python /venv_location/start.py >> /var/log/DNS-Dynamic-IP.log 2>&1
     ```
 * Run using Task Scheduler (Windows)
     ```

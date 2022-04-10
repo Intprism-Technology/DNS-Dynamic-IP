@@ -34,8 +34,9 @@ It is possible to check the Public IP on the router, if the ISP provides a Priva
     ```
     git init
     git remote add origin https://github.com/Intprism-Technology/DNS-Dynamic-IP.git
-    git branch --set-upstream-to=origin/main master
-    git pull
+    git fetch
+    git branch master origin/main
+    git checkout master
     ```
 * Run using Cron (Linux)
     ```

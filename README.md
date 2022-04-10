@@ -1,6 +1,9 @@
 # DNS Auto Update Dynamic IP
 It is possible to check the Public IP on the router, if the ISP provides a Private IP, this program will reconnect the PPOE until the ISP provides a Public IP, then update the DNS on your provider.
 
+## To Do
+* PowerDNS - Cyberpanel
+
 ## Supported Router
     Nokia G-240W-L => 'G-240W-L'
     ~ Soon ~

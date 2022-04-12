@@ -1,5 +1,4 @@
 import configuration
-
 import CloudFlare
 
 cf = CloudFlare.CloudFlare(email=configuration.cf_email, token=configuration.cf_token)

@@ -2,7 +2,7 @@
 It is possible to check the Public IP on the router, if the ISP provides a Private IP, this program will reconnect the PPOE until the ISP provides a Public IP, then update the DNS on your provider.
 
 ## To Do
-* PowerDNS - Cyberpanel
+
 
 ## Supported Router
     Nokia G-240W-L => 'G-240W-L'
@@ -12,6 +12,7 @@ It is possible to check the Public IP on the router, if the ISP provides a Priva
 
 ## Supported DNS Provider
     Cloudflare DNS => 'cloudflare'
+    PowerDNS Cyberpanel => 'pdns_cyberpanel'
     ~ Soon ~
 
 ## Supported Operating System
@@ -62,13 +63,20 @@ It is possible to check the Public IP on the router, if the ISP provides a Priva
     browserDriver           = ''    # required from lists
     headlessMode            = True  # required (True or False)
     dnsDriver               = ''    # required from lists
+
     # Cloudflare API
     cf_email                = ''    # required based on dnsDriver
     cf_token                = ''    # required based on dnsDriver
     cf_exceptListDnsUpdate  = []    # optional
-    cf_ipType               = ''    # required (A or AAAA)
+    cf_ipType               = ''    # required based on dnsDriver (A or AAAA)
     cf_onlyDomain           = []    # optional
     cf_onlyDnsRecord        = []    # optional
+
+    # PowerDNS Cyberpanel
+    cyberpanel_dbHost       = ''    # required based on dnsDriver
+    cyberpanel_dbUser       = ''    # required based on dnsDriver
+    cyberpanel_dbPassword   = ''    # required based on dnsDriver
+    cyberpanel_dbName       = ''    # required based on dnsDriver
     ```
 
 ## FAQ

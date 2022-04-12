@@ -2,6 +2,7 @@ import time
 import re
 import configuration
 from DnsDriver import cloudflare
+from DnsDriver import pdns_cyberpanel
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -46,6 +47,8 @@ password = config.password
 def ChangeDNS(ip):
     if(configuration.dnsDriver == 'cloudflare'):
         cloudflare.dns_update(ip)
+    elif(configuration.dnsDriver == 'pdns_cyberpanel'):
+        pdns_cyberpanel.dns_update(ip)
 
 if(config.routerType == 'G-240W-L'):
     def Timeout():

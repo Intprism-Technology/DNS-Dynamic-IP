@@ -76,16 +76,27 @@ if(config.routerType == 'G-240W-L'):
         public_ip = driver.find_element(By.ID, "ExternalIPAddress")
         rfc1918 = re.compile('^(10(\.(25[0-5]|2[0-4][0-9]|1[0-9]{1,2}|[0-9]{1,2})){3}|((172\.(1[6-9]|2[0-9]|3[01]))|192\.168)(\.(25[0-5]|2[0-4][0-9]|1[0-9]{1,2}|[0-9]{1,2})){2})$')
         if rfc1918.match(public_ip.text):
+            # driver.get("http://"+config.routerIP+"/wan_config_glb.cgi")
+            # Loading("cfg_wan")
+            # ipv = driver.find_element(By.XPATH, "//select[@name='ipv']")
+            # print(ipv.get_attribute("value"))
+            # if(ipv.get_attribute("value") == '1'):
+            #     driver.find_element(By.XPATH, "//select[@name='ipv']/option[text()='IPv4&IPv6']").click()
+            # else:
+            #     driver.find_element(By.XPATH, "//select[@name='ipv']/option[text()='IPv4']").click()
             driver.get("http://"+config.routerIP+"/wan_config_glb.cgi")
             Loading("cfg_wan")
-            ipv = driver.find_element(By.XPATH, "//select[@name='ipv']")
-            print(ipv.get_attribute("value"))
-            if(ipv.get_attribute("value") == '1'):
-                driver.find_element(By.XPATH, "//select[@name='ipv']/option[text()='IPv4&IPv6']").click()
-            else:
+            ipv = driver.find_element(By.XPATH, "//div[@class='container']")
+            if('Address Method' in ipv.text):
+                print('IPv4 and IPv6 Detect...')
                 driver.find_element(By.XPATH, "//select[@name='ipv']/option[text()='IPv4']").click()
+            else:
+                print('IPv4 Detect...')
+                driver.find_element(By.XPATH, "//select[@name='ipv']/option[text()='IPv4&IPv6']").click()
+            print('Trigger OK...')
             driver.find_element(By.ID, "do_edit").send_keys(Keys.ENTER)
             Loading("cfg_wan")
+            print('Reconnect OK...')
             driver.get("http://"+config.routerIP+"/login.cgi?out")
             Loading("loginform")
             return 'reconnect_ok'
